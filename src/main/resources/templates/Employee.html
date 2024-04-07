@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>All Employee Details</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .button-container button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>All Employee Details</h2>
+    
+    
+    <table id="employee-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Action</th> <!-- Add Action column for delete and update buttons -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="emp : ${employee}">
+            <td th:text="${emp.id}"></td>
+            <td th:text="${emp.name}"></td>
+            <td th:text="${emp.sal}"></td>
+            <td>
+                <!-- Add buttons for delete and update actions -->
+                <a th:href="@{/getById/{id}(id=${emp.id})}"><button>Update</button></a>
+                <a th:href="@{/deleteById/{id}(id=${emp.id})}"><button>Delete</button></a> 
+            </td>
+        </tr>
+    </tbody>
+    <div>
+    <a href="/home"><b>Back</b></a>
+</div>
+    
+</table>
+
+
+
+  
+   
+</body>
+</html>
