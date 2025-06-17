@@ -73,7 +73,7 @@ public class Controllerdemo {
 	@GetMapping("/add")
 	public String realme()
 	{
-		return "hi";
+		return "Hi-This method is only for testing";
 	}
 
 	
