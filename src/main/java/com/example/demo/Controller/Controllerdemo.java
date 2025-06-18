@@ -71,9 +71,11 @@ public class Controllerdemo {
 	}
 
 	@GetMapping("/add")
+	@ResponseBody
 	public String realme()
 	{
-		return "Hi-This method is only for testing";
+		String a="hey-This method is only for testing";
+		return a;
 	}
 
 	
