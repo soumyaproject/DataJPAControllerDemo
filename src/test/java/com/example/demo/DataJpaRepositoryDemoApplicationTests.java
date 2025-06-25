@@ -17,6 +17,7 @@ class DataJpaRepositoryDemoApplicationTests {
 		Controllerdemo controller = new Controllerdemo();
 		String result = controller.realme();
 		assertEquals("hey-This method is only for testing", result);
+		//test class created
 	}
 
 }
